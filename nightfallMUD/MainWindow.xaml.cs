@@ -10,7 +10,12 @@ namespace nightfallMUD
         public MainWindow()
         {
             InitializeComponent();
+            personajeInicial = new PJ();
+
+            SolicitarNombre();
         }
+
+        PJ personajeInicial;
 
         private void btn_Aceptar_Click(object sender, RoutedEventArgs e)
         {
@@ -20,6 +25,11 @@ namespace nightfallMUD
                 txtB_ComandosUsuario.Clear();
                 txtB_ComandosUsuario.Focus();
             }
+        }
+
+        private void SolicitarNombre()
+        {
+            lsB_Display.Items.Add(MensajesPersonaje.ObtenerNombre);
         }
     }
 }
